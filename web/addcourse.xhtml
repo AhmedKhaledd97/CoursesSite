@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="css.css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+
+            <div class="header">
+                <h:form>
+                <p:commandLink action="coursesopertion?faces-redirect=true" styleClass="link" value="Cources operation"></p:commandLink>
+                <p:commandLink action="addcourse?faces-redirect=true" styleClass="link" value="Add Cource"></p:commandLink>
+                <p:commandLink action="showstudent?faces-redirect=true" styleClass="link" value="Show Student"></p:commandLink>
+                <p:commandLink action="displaycourses?faces-redirect=true" styleClass="link" value="Display Courses"></p:commandLink>
+                <h:commandLink action="#{logoutbean.logout()}"  styleClass="link" value="Logout"></h:commandLink>
+                </h:form>
+
+            </div>
+
+            <div class="con">
+                <center>
+                    <p:panel header="ADD New Course">
+
+                        <h:form>
+                            <h:panelGrid columns="1" cellpadding="10px">
+
+                                <p:inputText id="u" value="#{addcoursebean.cname}" required="true" placeholder="Course Name"></p:inputText>
+                                <p:inputTextarea value="#{addcoursebean.cdetails}" cols="50" rows="10"  placeholder="Course Details"></p:inputTextarea>
+                                <p:calendar  value="#{addcoursebean.cdate}" mode="popup" showOn="button" pattern="yyyy-mm-dd"></p:calendar>
+                                <p:inputText  value="#{addcoursebean.chour}" required="true" placeholder="Number of Hours"></p:inputText>
+                                <p:inputText  value="#{addcoursebean.cteacher}" required="true" placeholder="Instractor"></p:inputText>
+                                <p:inputText  value="#{addcoursebean.clocation}" required="true" placeholder="Course Location"></p:inputText>
+                                <p:commandButton action="#{addcoursebean.addcourse()}"  value="ADD"></p:commandButton>
+
+                            </h:panelGrid>
+                        </h:form>
+                        
+                        <p:outputLabel value="#{addcoursebean.msg}" id="msg"  styleClass="msg" ></p:outputLabel>
+                    </p:panel>
+                </center>
+            </div>
+
+
+
+            <div class="footer"><center>Footer</center></div>
+
+        </div>
+    </h:body>
+</html>
+

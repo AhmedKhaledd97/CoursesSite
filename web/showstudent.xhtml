@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="css.css"/>
+    </h:head>
+    <h:body>
+
+        <div class="main">
+
+            <div class="header">
+                <h:form>
+                <p:commandLink action="courseopertion?faces-redirect=true" styleClass="link" value="Cources operation"></p:commandLink>
+                <p:commandLink action="addcourse?faces-redirect=true" styleClass="link" value="Add Cource"></p:commandLink>
+                <p:commandLink action="showstudent?faces-redirect=true" styleClass="link" value="Show Student"></p:commandLink>
+                <p:commandLink action="displaycourses?faces-redirect=true" styleClass="link" value="Display Courses"></p:commandLink>
+                <h:commandLink action="#{logoutbean.logout()}"    styleClass="link" value="Logout"></h:commandLink>
+                </h:form>
+
+            </div>
+
+            <div class="con2">
+
+                <h:form>
+
+                    <h:panelGrid columns="3" cellpadding="10px">
+                        <b>Select Course name</b>
+                        <p:selectOneMenu value="#{showstudentbean.cname}" >
+                            <f:selectItems value="#{showstudentbean.cnames}"></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:commandButton action="#{showstudentbean.showstudent()}"   update="t" value="Show Student"></p:commandButton><br/>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="3" cellpadding="10px">
+
+                        <p:commandButton    update="t" value="Refresh"></p:commandButton>
+
+                    </h:panelGrid>
+
+                    <p:dataTable id="t" value="#{showstudentbean.students}" var="s">
+
+
+                        <p:column  headerText="Name">
+
+                            <p:outputLabel value="#{s.name}" ></p:outputLabel>
+
+
+                        </p:column>
+
+                        <p:column  headerText="Phone">
+
+                            <p:outputLabel value="#{s.phone}" ></p:outputLabel>
+
+
+                        </p:column>
+
+                        <p:column  headerText="Maile">
+
+                            <p:outputLabel value="#{s.mail}" ></p:outputLabel>
+
+
+                        </p:column>
+
+                        <p:column  headerText="Eduction">
+
+                            <p:outputLabel value="#{s.eduction}" ></p:outputLabel>
+
+
+                        </p:column>
+
+                        <p:column headerText="Delete">
+                            <p:commandButton value="Delete" styleClass="edit"  update="t"   rendered="true"></p:commandButton>
+
+                        </p:column>
+
+                    </p:dataTable>
+
+                </h:form>
+            </div>
+
+
+
+            <div class="footer"><center>Footer</center></div>
+        </div>
+    </h:body>
+</html>
+

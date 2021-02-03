@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="css.css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+
+            <div class="header">
+                <p:commandLink action="login?faces-redirect=true" styleClass="link" value="Login"></p:commandLink>
+
+            </div>
+
+            <div class="con">
+
+                <h:form>
+                    <p:accordionPanel value="#{displaybean.courses}" var="c">
+                    
+                        <p:tab title="#{c.cname} course">
+                        <h3>Course Details</h3>
+                        <div>#{c.cdetails}</div>
+
+
+
+
+                        <div class="lib"><b>Date</b></div>
+                        <div class="lib">#{c.cdate}</div>
+                        <div class="lib"><b>Number of Hour</b></div>
+                        <div class="lib">#{c.chour}</div>
+                        <div class="lib"><b>Instructor</b></div>
+                        <div class="lib">#{c.cteacher}</div>
+                        <div class="lib"><b>Location</b></div>
+                        <div class="lib">#{c.clocation}</div>
+
+
+                        <div class="lib"><h:commandLink  action="#{displaybean.applypage(c.cname)}" style="background-color: slateblue; padding: 10px; margin-top:  500px; color: white;" value="Apply now"></h:commandLink></div>
+
+                    </p:tab>
+                    
+                    
+                    
+
+                </p:accordionPanel>
+
+            </h:form>
+            </div>
+
+
+
+            <div class="footer"><center>Footer</center></div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,70 @@
+.login{
+    margin: 15%;
+    margin-left: 32%;
+    margin-right: 32%;
+    
+}
+body{
+    background-color: #ececec; 
+    margin: 0px;
+    
+}
+.msg{
+    color: coral;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.main{
+    padding-top: 70px;
+    margin-left: 12%;
+    margin-right: 12%;
+    background-color: white;
+    padding-bottom: 50px;
+    
+    
+}
+.header{
+    padding: 10px;
+    background-color: #c4c4c4;
+    
+    
+}
+.footer{
+    
+  padding: 10px;
+    background-color: #c4c4c4;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold; 
+   
+}
+.link{
+    padding-right: 20px;
+    
+}
+.con{
+    margin-top: 100px;
+    padding: 0px 10%;
+}
+.con2{
+    
+    margin-top: 100px;
+    padding: 0px 3px;
+}
+.edit{
+    background-color: blue;
+    
+}
+
+.lib{
+    margin-top: 10px;
+   width: 25%;
+   float: left;
+}
+.apply{
+    
+    background-color: blue;
+}
